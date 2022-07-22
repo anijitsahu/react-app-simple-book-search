@@ -10,6 +10,7 @@ import "./css/styles.css";
 
 // Constants
 import { Constants } from "./Constants";
+import { useState } from "react";
 
 const allConstants = Constants();
 // initialize the Apollo Client
@@ -19,12 +20,13 @@ const client = new ApolloClient({
 });
 
 export default function App() {
+  const [tokenReceived, setTokenReceived] = useState(false);
   return (
     <ApolloProvider client={client}>
-      <div>
-        <Login />
-        <Search />
-      </div>
+      <main>
+        <Login onTokenReceipt={setTokenReceived} />
+        {tokenReceived && <Search />}
+      </main>
     </ApolloProvider>
   );
 }

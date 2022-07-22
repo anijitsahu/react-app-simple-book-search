@@ -4,6 +4,9 @@ import { useState } from "react";
 // css
 import "../css/login.css";
 
+// components
+import ShowError from "./ShowError";
+
 export default function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,28 +27,34 @@ export default function Login(props) {
 
   const onClickHandler = (e) => {
     if (username && password) {
-      createToken({ variables: { username, password } });
-    } else {
-      console.log("Button clicked");
+      createToken({
+        variables: { userInput: username, passwordInput: password },
+      });
+      setUsername("");
+      setPassword("");
     }
   };
 
-  const [createToken, { loading, error, data }] = useLazyQuery(
-    CREATE_TOKEN_QUERY,
-    {
-      variables: { username: "admin", password: "admin123" },
-    }
-  );
+  const [createToken, { loading, error, data }] =
+    useLazyQuery(CREATE_TOKEN_QUERY);
+
+  if (error) {
+    console.log("Error received", error);
+    return <ShowError />;
+  }
 
   console.log("values are", loading, " and error ", error, " and Data", data);
+  if (data.createToken.token) {
+    localStorage.setItem("AUTH_TOKEN", data.createToken.token);
+  }
   return (
-    <div className="login-div padding-1rem">
+    <section className="login-div padding-1rem">
       <div>Login Page</div>
       <input
         id="username"
         type="text"
         className="login-input padding-1rem"
-        placeholder="Username"
+        placeholder="Enter Username"
         value={username}
         onChange={onChangeHandler}
       />
@@ -53,13 +62,13 @@ export default function Login(props) {
         id="password"
         type="password"
         className="login-input padding-1rem"
-        placeholder="Password"
+        placeholder="Enter Password"
         value={password}
         onChange={onChangeHandler}
       />
       <button className="login-button" onClick={onClickHandler}>
         Login
       </button>
-    </div>
+    </section>
   );
 }
