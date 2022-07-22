@@ -1,0 +1,28 @@
+.login-div {
+    border: var(--basic-border);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  
+    width: 50vw;
+    box-shadow: var(--basic-shadow);
+  
+    margin: auto;
+  }
+  
+  .login-input {
+    width: 100%;
+    border-bottom: var(--purple-border);
+  
+    font-size: var(--font-big);
+  }
+  
+  .login-input:hover,
+  .login-input:focus {
+    border-bottom: var(--purple-border-thick);
+    cursor: pointer;
+  }
+  
+  .login-button {
+    background-color: var(--primary-color);
+  }
+  

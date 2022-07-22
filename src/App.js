@@ -8,9 +8,13 @@ import Search from "./components/Search";
 // css
 import "./css/styles.css";
 
+// Constants
+import { Constants } from "./Constants";
+
+const allConstants = Constants();
 // initialize the Apollo Client
 const client = new ApolloClient({
-  uri: "https://4j844x5vu5.execute-api.ap-south-1.amazonaws.com/graphql",
+  uri: allConstants.GRAPHQL_URL,
   cache: new InMemoryCache(),
 });
 
@@ -18,7 +22,6 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <h1>Hello World !!</h1>
         <Login />
         <Search />
       </div>
