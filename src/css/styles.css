@@ -1,0 +1,20 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: purple;
+  --basic-border: solid 1px #eee;
+  --basic-shadow: 5px 5px 10px #eee;
+}
+
+.login-div {
+  border: var(--basic-border);
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 50vw;
+  padding: 1rem;
+  box-shadow: var(--basic-shadow);
+}
