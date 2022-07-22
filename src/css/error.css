@@ -1,0 +1,11 @@
+.error-container {
+  border-left: solid 1px var(--error-color);
+}
+
+.error-description {
+  background-color: var(--fill-in-color);
+}
+
+.error-title {
+  color: var(--error-color);
+}
