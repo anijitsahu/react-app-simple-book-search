@@ -38,18 +38,22 @@ export default function Login(props) {
   const [createToken, { loading, error, data }] =
     useLazyQuery(CREATE_TOKEN_QUERY);
 
-  if (error) {
-    console.log("Error received", error);
-    return <ShowError />;
+  // if (error) {
+  //   console.log("Error received", error.toString());
+  //   return <ShowError />;
+  // }
+
+  if (data?.createToken?.token) {
+    localStorage.setItem("AUTH_TOKEN", data.createToken.token);
+
+    // fix for Error: can not update App while Login is updating
+    setTimeout(() => props.onTokenReceipt(true), 100);
   }
 
-  console.log("values are", loading, " and error ", error, " and Data", data);
-  if (data.createToken.token) {
-    localStorage.setItem("AUTH_TOKEN", data.createToken.token);
-  }
   return (
     <section className="login-div padding-1rem">
       <div>Login Page</div>
+      {error && <ShowError errorMessage={error.toString()} />}
       <input
         id="username"
         type="text"

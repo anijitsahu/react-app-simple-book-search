@@ -7,6 +7,7 @@ export default function ShowError(props) {
     showError && (
       <div>
         <h4>Error Occurred</h4>
+        <div>{props.errorMessage}</div>
       </div>
     )
   );

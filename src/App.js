@@ -21,11 +21,19 @@ const client = new ApolloClient({
 
 export default function App() {
   const [tokenReceived, setTokenReceived] = useState(false);
+
+  const onTokenReceiptHandler = (received) => {
+    setTokenReceived(received);
+  };
+
   return (
     <ApolloProvider client={client}>
       <main>
-        <Login onTokenReceipt={setTokenReceived} />
-        {tokenReceived && <Search />}
+        {!tokenReceived ? (
+          <Login onTokenReceipt={onTokenReceiptHandler} />
+        ) : (
+          <Search />
+        )}
       </main>
     </ApolloProvider>
   );
