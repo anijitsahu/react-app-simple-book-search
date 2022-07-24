@@ -9,6 +9,16 @@ const allQueries = () => {
         }
       }
     `,
+
+    FIND_BOOKS_QUERY: gql`
+      query FindBooksQuery {
+        findBooks {
+          _id
+          name
+          published
+        }
+      }
+    `,
   };
 };
 

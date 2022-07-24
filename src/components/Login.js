@@ -44,7 +44,7 @@ export default function Login(props) {
 
   return (
     <section className="login-div padding-1rem">
-      <div className="login-title">User Login</div>
+      <div className="title-text">User Login</div>
       {error && <ShowError errorMessage={error.toString()} />}
       <input
         id="username"

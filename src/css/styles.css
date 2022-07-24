@@ -32,11 +32,22 @@ body {
 
 input {
   outline: none;
+  border-bottom: var(--purple-border);
+}
+
+input:hover,
+input:focus {
+  cursor: pointer;
+}
+
+input:focus {
+  border-bottom: var(--purple-border-thick);
 }
 
 button {
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   color: #fff;
+  background-color: var(--primary-color);
   font-size: var(--font-big);
 
   margin-top: 1rem;
@@ -46,4 +57,14 @@ button {
 
 .padding-1rem {
   padding: 1rem;
+}
+
+.title-text {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.align-center {
+  text-align: center;
 }

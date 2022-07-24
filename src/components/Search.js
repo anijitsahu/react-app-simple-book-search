@@ -1,30 +1,39 @@
 // npm dependencies
+import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 
 // local dependencies
 import { allQueries } from "./AllQueries";
+import ShowResults from "./ShowResults";
 
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
 
   // extract necessary gql queries
   const ALL_QUERIES = allQueries();
-  // const CREATE_TOKEN_QUERY = ALL_QUERIES.CREATE_TOKEN_QUERY;
+  const FIND_BOOKS_QUERY = ALL_QUERIES.FIND_BOOKS_QUERY;
+
+  // query graphql server
+  const [findBooks, { loading, error, data }] = useLazyQuery(FIND_BOOKS_QUERY);
+  console.log("loading", loading, " and error ", error, " and data ", data);
 
   const onClickHandler = () => {
-    console.log("seaech text: ", searchText);
+    console.log("search text: ", searchText);
+    findBooks();
   };
 
   return (
-    <section>
-      <h3>Search Page</h3>
+    <section className="padding-1rem align-center">
+      <div className="title-text">Search Books</div>
       <input
         type="text"
         placeholder="Enter book name to search"
+        className="padding-1rem"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
       <button onClick={onClickHandler}>Search</button>
+      {data && <ShowResults results={data.findBooks} />}
     </section>
   );
 }

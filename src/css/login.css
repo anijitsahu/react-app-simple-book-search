@@ -10,23 +10,8 @@
   text-align: center;
 }
 
-.login-title {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
 .login-input {
   width: 100%;
-  border-bottom: var(--purple-border);
-
-  /* font-size: var(--font-big); */
-}
-
-.login-input:hover,
-.login-input:focus {
-  border-bottom: var(--purple-border-thick);
-  cursor: pointer;
 }
 
 .login-button {

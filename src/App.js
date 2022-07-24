@@ -1,5 +1,11 @@
 // npm dependencies
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 // components
 import Login from "./components/Login";
@@ -13,9 +19,28 @@ import { Constants } from "./Constants";
 import { useState } from "react";
 
 const allConstants = Constants();
+
+// link and auth token set up
+const httpLink = createHttpLink({
+  uri: allConstants.GRAPHQL_URL,
+});
+
+const authLink = setContext((parent, context) => {
+  console.log("parent", parent, " and context ", context);
+
+  // adding authorization headers to current context
+  return {
+    ...context,
+    headers: {
+      authorization: localStorage.getItem("AUTH_TOKEN") || "",
+    },
+  };
+});
+
 // initialize the Apollo Client
 const client = new ApolloClient({
-  uri: allConstants.GRAPHQL_URL,
+  // order is important
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
