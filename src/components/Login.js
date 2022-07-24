@@ -1,4 +1,4 @@
-import { gql, useQuery, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 
 // css
@@ -6,18 +6,15 @@ import "../css/login.css";
 
 // components
 import ShowError from "./ShowError";
+import { allQueries } from "./AllQueries";
 
 export default function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const CREATE_TOKEN_QUERY = gql`
-    query CreateTokenQuery($userInput: String!, $passwordInput: String!) {
-      createToken(username: $userInput, password: $passwordInput) {
-        token
-      }
-    }
-  `;
+  // extract necessary gql queries
+  const ALL_QUERIES = allQueries();
+  const CREATE_TOKEN_QUERY = ALL_QUERIES.CREATE_TOKEN_QUERY;
 
   // event handlers
   const onChangeHandler = (e) => {
@@ -37,11 +34,6 @@ export default function Login(props) {
 
   const [createToken, { loading, error, data }] =
     useLazyQuery(CREATE_TOKEN_QUERY);
-
-  // if (error) {
-  //   console.log("Error received", error.toString());
-  //   return <ShowError />;
-  // }
 
   if (data?.createToken?.token) {
     localStorage.setItem("AUTH_TOKEN", data.createToken.token);
