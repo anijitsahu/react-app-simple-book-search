@@ -16,6 +16,7 @@
 
   --primary-color: purple;
   --error-color: red;
+  --badge-color: #eee;
   --fill-in-color: #eee;
   --basic-border: solid 1px #eee;
   --basic-shadow: 5px 5px 10px #eee;
@@ -67,4 +68,13 @@ button {
 
 .align-center {
   text-align: center;
+}
+
+.icon {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.7;
 }

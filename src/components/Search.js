@@ -23,7 +23,7 @@ export default function Search(props) {
   };
 
   return (
-    <section className="padding-1rem align-center">
+    <section className="padding-1rem align-center search-container">
       <div className="title-text">Search Books</div>
       <input
         type="text"
@@ -33,7 +33,7 @@ export default function Search(props) {
         onChange={(e) => setSearchText(e.target.value)}
       />
       <button onClick={onClickHandler}>Search</button>
-      {data && <ShowResults results={data.findBooks} />}
+      {data && <ShowResults results={data.findBooks} resultTitle={"Books"} />}
     </section>
   );
 }
