@@ -8,7 +8,7 @@ export default function ShowResults(props) {
         <span className="result-metadata result-metadata-badge">
           {props.results.length}
         </span>
-        <i class="fa-solid fa-plus icon"></i>
+        <i className="fa-solid fa-plus icon" onClick={props.addItemHandler}></i>
       </div>
       {props.results.map((ele) => {
         return (
@@ -17,6 +17,9 @@ export default function ShowResults(props) {
             <div className="result-metadata-title">
               <span className="result-metadata">Published</span>{" "}
               {ele.published || "NA"}
+            </div>
+            <div>
+              <i className="fa-solid fa-pencil icon"></i>
             </div>
           </article>
         );

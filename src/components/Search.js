@@ -5,9 +5,11 @@ import { useState } from "react";
 // local dependencies
 import { allQueries } from "./AllQueries";
 import ShowResults from "./ShowResults";
+import AddItem from "./AddItem";
 
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
+  const [addItem, setAddItem] = useState(false);
 
   // extract necessary gql queries
   const ALL_QUERIES = allQueries();
@@ -33,7 +35,14 @@ export default function Search(props) {
         onChange={(e) => setSearchText(e.target.value)}
       />
       <button onClick={onClickHandler}>Search</button>
-      {data && <ShowResults results={data.findBooks} resultTitle={"Books"} />}
+      {data && (
+        <ShowResults
+          results={data.findBooks}
+          resultTitle={"Books"}
+          addItemHandler={() => setAddItem(true)}
+        />
+      )}
+      {addItem && <AddItem addItemHandler={() => setAddItem(false)} />}
     </section>
   );
 }

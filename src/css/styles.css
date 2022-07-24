@@ -18,8 +18,12 @@
   --error-color: red;
   --badge-color: #eee;
   --fill-in-color: #eee;
+  --icon-color: #ccc;
+
   --basic-border: solid 1px #eee;
+
   --basic-shadow: 5px 5px 10px #eee;
+  --dark-shadow: 0 0 15px #ccc;
 
   --purple-border: solid 2px var(--primary-color);
   --purple-border-thick: solid 3px var(--primary-color);
@@ -63,7 +67,8 @@ button {
 .title-text {
   font-size: 1.5rem;
   color: var(--primary-color);
-  font-weight: 700;
+  font-weight: 100;
+  padding-bottom: 1rem;
 }
 
 .align-center {
@@ -73,8 +78,17 @@ button {
 .icon {
   margin-left: 1rem;
   cursor: pointer;
+  color: var(--icon-color);
+  font-size: 0.8rem;
 }
 
 .icon:hover {
   opacity: 0.7;
+}
+
+.close-icon {
+  position: inherit;
+  right: 0.9rem;
+  top: 0.4rem;
+  font-size: 1rem !important;
 }

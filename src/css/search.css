@@ -3,11 +3,12 @@
   box-shadow: var(--basic-shadow);
   width: 80vw;
   margin: 0 auto;
+  position: relative;
 }
 
 .result-item-container {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 1fr auto;
   border-bottom: var(--basic-border);
   text-align: left;
 }

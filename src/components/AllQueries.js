@@ -19,6 +19,15 @@ const allQueries = () => {
         }
       }
     `,
+
+    ADD_BOOKS_MUTATION: gql`
+      mutation AddBookMutation($bookName: String!) {
+        addBook(name: $bookName) {
+          _id
+          name
+        }
+      }
+    `,
   };
 };
 

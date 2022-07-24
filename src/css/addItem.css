@@ -1,0 +1,19 @@
+.add-item-container {
+  position: absolute;
+  box-shadow: var(--dark-shadow);
+
+  display: grid;
+  gap: 1rem;
+  background-color: #fff;
+  width: 40vw;
+
+  top: 30vh;
+  left: 30%;
+  z-index: 2;
+}
+
+.add-item-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
