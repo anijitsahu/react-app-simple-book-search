@@ -13,6 +13,8 @@ For UI creation [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS
 
 This is a _responsive web application_ for viewing in both Mobile and Desktop.
 
+**This Application is closely related to [simple-apollo-server-graphql-lambda](https://github.com/anijitsahu/simple-apollo-server-graphql-lambda). For Backend Deployment details please check [simple-apollo-server-graphql-lambda](https://github.com/anijitsahu/simple-apollo-server-graphql-lambda).**
+
 ## Features
 
 1. Code is rewritten with [React JS 18](https://reactjs.org/docs/getting-started.html) and [Node JS 18](https://nodejs.org/en/docs/)
