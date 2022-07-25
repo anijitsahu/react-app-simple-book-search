@@ -5,7 +5,7 @@ import { useState } from "react";
 import "../css/login.css";
 
 // components
-import ShowError from "./ShowError";
+import Notification from "./Notification";
 import { allGraphQLQueries } from "./AllGraphQLQueries";
 
 export default function Login(props) {
@@ -45,7 +45,12 @@ export default function Login(props) {
   return (
     <section className="login-div padding-1rem">
       <div className="title-text">User Login</div>
-      {error && <ShowError errorMessage={error.toString()} />}
+      {error && (
+        <Notification
+          notificationMessage={error.toString()}
+          notificationType={"error"}
+        />
+      )}
       <input
         id="username"
         type="text"

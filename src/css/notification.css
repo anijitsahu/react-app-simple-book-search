@@ -1,3 +1,7 @@
+.notification-container {
+  border-left: solid 1px var(--success-color);
+}
+
 .error-container {
   border-left: solid 1px var(--error-color);
 }
