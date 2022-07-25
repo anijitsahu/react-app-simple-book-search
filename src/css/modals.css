@@ -17,3 +17,11 @@
   grid-template-columns: auto 1fr;
   gap: 1rem;
 }
+
+.edit-modal-container {
+  z-index: 3;
+}
+
+.delete-modal-container {
+  z-index: 4;
+}

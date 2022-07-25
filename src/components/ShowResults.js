@@ -19,7 +19,14 @@ export default function ShowResults(props) {
               {ele.published || "NA"}
             </div>
             <div>
-              <i className="fa-solid fa-pencil icon"></i>
+              <i
+                className="fa-solid fa-pencil icon"
+                onClick={props.editItemHandler}
+              ></i>
+              <i
+                className="fa-solid fa-trash"
+                onClick={props.deleteItemHandler}
+              ></i>
             </div>
           </article>
         );

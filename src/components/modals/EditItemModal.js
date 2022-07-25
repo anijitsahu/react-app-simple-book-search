@@ -8,7 +8,7 @@ import "../css/modals.css";
 // local dependencies
 import { allQueries } from "../AllQueries";
 
-export default function AddItemModal(props) {
+export default function EditItemModal(props) {
   const [itemDetails, setItemDetails] = useState({
     bookName: "",
     published: "",
@@ -38,7 +38,7 @@ export default function AddItemModal(props) {
   };
 
   return (
-    <section className="basic-modal-container padding-1rem">
+    <section className="basic-modal-container edit-modal-container padding-1rem">
       <div className="title-text">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"

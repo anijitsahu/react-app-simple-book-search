@@ -6,10 +6,14 @@ import { useState } from "react";
 import { allQueries } from "./AllQueries";
 import ShowResults from "./ShowResults";
 import AddItemModal from "./modals/AddItemModal";
+import DeleteItemModal from "./modals/DeleteItemModal";
+import EditItemModal from "./modals/EditItemModal";
 
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
   const [addItem, setAddItem] = useState(false);
+  const [deleteItem, setDeleteItem] = useState(false);
+  const [editItem, setEditItem] = useState(false);
 
   // extract necessary gql queries
   const ALL_QUERIES = allQueries();
@@ -40,12 +44,29 @@ export default function Search(props) {
           results={data.findBooks}
           resultTitle={"Books"}
           addItemHandler={() => setAddItem(true)}
+          deleteItemHandler={() => setDeleteItem(true)}
+          editItemHandler={() => setEditItem(true)}
         />
       )}
       {addItem && (
         <AddItemModal
           modalTitle={"Add Book"}
+          modalButtonText={"Save"}
           addItemHandler={() => setAddItem(false)}
+        />
+      )}
+      {editItem && (
+        <EditItemModal
+          modalTitle={"Edit Book"}
+          modalButtonText={"Save"}
+          editItemHandler={() => setEditItem(false)}
+        />
+      )}
+      {deleteItem && (
+        <DeleteItemModal
+          modalTitle={"Delete Book"}
+          modalButtonText={"Confirm"}
+          deleteItemHandler={() => setDeleteItem(false)}
         />
       )}
     </section>

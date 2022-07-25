@@ -8,7 +8,7 @@ import "../css/modals.css";
 // local dependencies
 import { allQueries } from "../AllQueries";
 
-export default function AddItemModal(props) {
+export default function DeleteItemModal(props) {
   const [itemDetails, setItemDetails] = useState({
     bookName: "",
     published: "",
@@ -25,10 +25,6 @@ export default function AddItemModal(props) {
   console.log("data ", data, " erroor", error, " and loading ", loading);
 
   // event handlers
-  const onChangeHandler = (e) => {
-    const { id, value } = e.target;
-    setItemDetails({ ...itemDetails, [id]: value });
-  };
 
   const onClickHandler = (e) => {
     console.log("Item Details", itemDetails);
@@ -38,32 +34,13 @@ export default function AddItemModal(props) {
   };
 
   return (
-    <section className="basic-modal-container padding-1rem">
+    <section className="basic-modal-container delete-modal-container padding-1rem">
       <div className="title-text">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.addItemHandler}
       ></i>
-      <article className="basic-modal-details">
-        <label className="result-metadata result-metadata-title">
-          Book Name
-        </label>
-        <input
-          type="text"
-          id="bookName"
-          value={itemDetails.bookName}
-          onChange={onChangeHandler}
-        />
-        <label className="result-metadata result-metadata-title">
-          Published Year
-        </label>
-        <input
-          type="text"
-          id="published"
-          value={itemDetails.published}
-          onChange={onChangeHandler}
-        />
-      </article>
+      <article className="basic-modal-details">Do you want to delete ?</article>
       <button onClick={onClickHandler}>{props.modalButtonText}</button>
     </section>
   );
