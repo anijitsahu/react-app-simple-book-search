@@ -11,8 +11,6 @@ import { useState } from "react";
 // components
 import Login from "./components/Login";
 import Search from "./components/Search";
-import Notification from "./components/Notification";
-import { NotificationContext } from "./components/AllContexts";
 
 // css
 import "./css/styles.css";
@@ -52,30 +50,28 @@ export default function App() {
     showNotification: false,
     notificationMessage: "",
     notificationType: "",
+    notifyId: "",
   });
 
   const onTokenReceiptHandler = (received) => {
     setTokenReceived(received);
   };
 
+  const onNotify = (notifyDetails) => {
+    console.log("Details received", notifyDetails);
+    setNotificationDetails({ ...notificationDetails, ...notifyDetails });
+  };
+
   return (
     <ApolloProvider client={client}>
       <header />
-      <NotificationContext.Provider value={{ setNotificationDetails }}>
-        <main>
-          {notificationDetails.showNotification && (
-            <Notification
-              notificationType={notificationDetails.notificationType}
-              notificationMessage={notificationDetails.notificationMessage}
-            />
-          )}
-          {!tokenReceived ? (
-            <Login onTokenReceipt={onTokenReceiptHandler} />
-          ) : (
-            <Search />
-          )}
-        </main>
-      </NotificationContext.Provider>
+      <main>
+        {!tokenReceived ? (
+          <Login onTokenReceipt={onTokenReceiptHandler} onNotify={onNotify} />
+        ) : (
+          <Search />
+        )}
+      </main>
       <footer />
     </ApolloProvider>
   );

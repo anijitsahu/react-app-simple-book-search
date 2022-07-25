@@ -8,6 +8,7 @@ import ShowResults from "./ShowResults";
 import AddItemModal from "./modals/AddItemModal";
 import DeleteItemModal from "./modals/DeleteItemModal";
 import EditItemModal from "./modals/EditItemModal";
+import Loading from "./Loading";
 
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
@@ -47,6 +48,7 @@ export default function Search(props) {
         onChange={(e) => setSearchText(e.target.value)}
       />
       <button onClick={onClickHandler}>Search</button>
+      {loading && <Loading />}
       {data && (
         <ShowResults
           results={data.findBooks}

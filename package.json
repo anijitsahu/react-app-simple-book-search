@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@apollo/client": "^3.6.9",
