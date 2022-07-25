@@ -1,4 +1,4 @@
-.add-item-container {
+.basic-modal-container {
   position: absolute;
   box-shadow: var(--dark-shadow);
 
@@ -12,7 +12,7 @@
   z-index: 2;
 }
 
-.add-item-details {
+.basic-modal-details {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;

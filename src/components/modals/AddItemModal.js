@@ -3,10 +3,10 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 // css
-import "../css/addItem.css";
+import "../css/modals.css";
 
 // local dependencies
-import { allQueries } from "./AllQueries";
+import { allQueries } from "../AllQueries";
 
 export default function AddItem(props) {
   const [itemDetails, setItemDetails] = useState({
@@ -38,13 +38,13 @@ export default function AddItem(props) {
   };
 
   return (
-    <section className="add-item-container padding-1rem">
-      <div className="title-text">Add Item</div>
+    <section className="basic-modal-container padding-1rem">
+      <div className="title-text">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.addItemHandler}
       ></i>
-      <article className="add-item-details">
+      <article className="basic-modal-details">
         <label className="result-metadata result-metadata-title">
           Book Name
         </label>

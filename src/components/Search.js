@@ -5,7 +5,7 @@ import { useState } from "react";
 // local dependencies
 import { allQueries } from "./AllQueries";
 import ShowResults from "./ShowResults";
-import AddItem from "./AddItem";
+import AddItemModal from "./modals/AddItemModal";
 
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
@@ -42,7 +42,12 @@ export default function Search(props) {
           addItemHandler={() => setAddItem(true)}
         />
       )}
-      {addItem && <AddItem addItemHandler={() => setAddItem(false)} />}
+      {addItem && (
+        <AddItemModal
+          modalTitle={"Add Book"}
+          addItemHandler={() => setAddItem(false)}
+        />
+      )}
     </section>
   );
 }
