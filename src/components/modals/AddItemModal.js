@@ -7,6 +7,7 @@ import "../../css/modals.css";
 
 // local dependencies
 import { allGraphQLQueries } from "../AllGraphQLQueries";
+import Loading from "../Loading";
 import Notification from "../Notification";
 
 export default function AddItemModal(props) {
@@ -73,6 +74,7 @@ export default function AddItemModal(props) {
         />
       </article>
       <button onClick={onClickHandler}>{props.modalButtonText}</button>
+      {loading && <Loading />}
     </section>
   );
 }

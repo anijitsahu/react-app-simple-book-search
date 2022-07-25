@@ -7,6 +7,7 @@ import "../../css/modals.css";
 
 // local dependencies
 import { allGraphQLQueries } from "../AllGraphQLQueries";
+import Notification from "../Notification";
 
 export default function EditItemModal(props) {
   const [itemDetails, setItemDetails] = useState({
@@ -49,6 +50,12 @@ export default function EditItemModal(props) {
 
   return (
     <section className="basic-modal-container edit-modal-container padding-1rem">
+      {data && (
+        <Notification
+          notificationMessage={"Data deleted successfully"}
+          notificationType={"success"}
+        />
+      )}
       <div className="title-text title-text-bordered">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
