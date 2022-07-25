@@ -79,6 +79,7 @@ export default function Search(props) {
         <EditItemModal
           modalTitle={"Edit Book"}
           modalButtonText={"Save"}
+          itemToEdit={editItem.itemToEdit}
           editItemHandler={() =>
             setEditItem({
               ...editItem,

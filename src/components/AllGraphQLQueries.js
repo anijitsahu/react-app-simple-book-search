@@ -34,6 +34,15 @@ const allGraphQLQueries = () => {
         deleteBook(_id: $bookId)
       }
     `,
+
+    UPDATE_BOOK_MUTATION: gql`
+      mutation UpdateBookMutation(
+        $updateId: ID!
+        $bookData: UpdataBookParams!
+      ) {
+        updateBook(_id: $updateId, updateBookData: $bookData)
+      }
+    `,
   };
 };
 

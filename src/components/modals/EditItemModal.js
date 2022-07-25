@@ -10,16 +10,16 @@ import { allGraphQLQueries } from "../AllGraphQLQueries";
 
 export default function EditItemModal(props) {
   const [itemDetails, setItemDetails] = useState({
-    bookName: "",
-    published: "",
+    bookName: props?.itemToEdit?.name,
+    published: props?.itemToEdit?.published || "",
   });
 
   // extract necessary gql query
   const ALL_GRAPHQL_QUERIES = allGraphQLQueries();
 
   // graphql operations
-  const [addBook, { data, loading, error }] = useMutation(
-    ALL_GRAPHQL_QUERIES.ADD_BOOKS_MUTATION
+  const [updateBook, { data, loading, error }] = useMutation(
+    ALL_GRAPHQL_QUERIES.UPDATE_BOOK_MUTATION
   );
 
   console.log("data ", data, " erroor", error, " and loading ", loading);
@@ -33,7 +33,17 @@ export default function EditItemModal(props) {
   const onClickHandler = (e) => {
     console.log("Item Details", itemDetails);
     if (itemDetails.bookName) {
-      addBook({ variables: { bookName: itemDetails.bookName } });
+      updateBook({
+        variables: {
+          updateId: props?.itemToEdit?._id,
+          bookData: {
+            name: itemDetails.bookName,
+          },
+        },
+      });
+
+      // close the modal and reset
+      props.editItemHandler();
     }
   };
 
