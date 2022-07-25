@@ -64,7 +64,7 @@ export default function App() {
 
   return (
     <ApolloProvider client={client}>
-      <header />
+      <header>Simple Book Search</header>
       <main>
         {!tokenReceived ? (
           <Login onTokenReceipt={onTokenReceiptHandler} onNotify={onNotify} />
