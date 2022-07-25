@@ -103,47 +103,28 @@ Desktop as well as Mobile version of the screenshots are given side by side.
  <img src="screenshots/mobile 1.png" width="190px" title="Login screen"/> 
 </p>
  
- <p> Entering credentials <br/> 
+ <p> If credentials are not correct <br/> 
  <img src="screenshots/desktop 2.png" width="590px" title="Entering credentials screen"/>
  <img src="screenshots/mobile 2.png" width="190px" title="Entering credentials screen"/> 
 </p>
 
-<p> After submitting credentials <br/> 
+<p> After submitting credentials and Search a book <br/> 
  <img src="screenshots/desktop 3.png" width="590px" title="After submitting credentials screen"/>
  <img src="screenshots/mobile 3.png" width="190px" title="After submitting credentials screen"/> 
 </p>
 
-<p> If credentials are not correct <br/> 
+<p> Add a Book <br/> 
  <img src="screenshots/desktop 4.png" width="590px" title="If credentials are not correct screen"/>
  <img src="screenshots/mobile 4.png" width="190px" title="If credentials are not correct screen"/> 
 </p>
 
-<p> After a successful login  <br/> 
+<p> Edit a Book <br/> 
  <img src="screenshots/desktop 5.png" width="590px" title="After a successful login screen"/>
  <img src="screenshots/mobile 5.png" width="190px" title="After a successful login screen"/> 
 </p>
 
-<p> When a new user joins <br/> 
+<p> Delete a Book <br/> 
  <img src="screenshots/desktop 6.png" width="590px" title="When a new user joins screen"/>
  <img src="screenshots/mobile 6.png" width="190px" title="When a new user joins screen"/> 
 </p>
 
-<p> When a new user joins (2nd browser) <br/> 
- <img src="screenshots/desktop 7.png" width="590px" title="When a new user joins (2nd browser) screen"/>
- <img src="screenshots/mobile 7.png" width="190px" title="When a new user joins (2nd browser) screen"/> 
-</p>
-
-<p> Sender type some message <br/> 
- <img src="screenshots/desktop 9.png" width="590px" title="Sender type some message screen"/>
- <img src="screenshots/mobile 9.png" width="190px" title="Sender type some message screen"/> 
-</p>
-
-<p> Receiver's room is updated <br/> 
- <img src="screenshots/desktop 10.png" width="590px" title="Receiver's room is updated screen"/>
- <img src="screenshots/mobile 10.png" width="190px" title="Receiver's room is updated screen"/> 
-</p>
-
-<p> Logout functionality <br/> 
- <img src="screenshots/desktop 11.png" width="590px" title="Logout functionality screen"/>
- <img src="screenshots/mobile 11.png" width="250px" title="Logout functionality screen"/> 
-</p>
