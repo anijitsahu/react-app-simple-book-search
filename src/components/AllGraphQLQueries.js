@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const allQueries = () => {
+const allGraphQLQueries = () => {
   return {
     CREATE_TOKEN_QUERY: gql`
       query CreateTokenQuery($userInput: String!, $passwordInput: String!) {
@@ -28,7 +28,13 @@ const allQueries = () => {
         }
       }
     `,
+
+    DELETE_BOOK_MUTATION: gql`
+      mutation DeleteBookMutation($bookId: ID!) {
+        deleteBook(_id: $bookId)
+      }
+    `,
   };
 };
 
-export { allQueries };
+export { allGraphQLQueries };

@@ -14,13 +14,14 @@
 
   --font-big: 1.1rem;
 
-  --primary-color: purple;
-  --error-color: red;
+  --primary-color: #520877;
+  --error-color: #cc0000;
   --badge-color: #eee;
   --fill-in-color: #eee;
   --icon-color: #ccc;
 
   --basic-border: solid 1px #eee;
+  --thick-border: solid 5px var(--primary-color);
 
   --basic-shadow: 5px 5px 10px #eee;
   --dark-shadow: 0 0 15px #ccc;
@@ -33,6 +34,23 @@
 body {
   font-size: var(--font-regular);
   font-family: var(--font-family);
+}
+
+header,
+footer {
+  background-color: var(--primary-color);
+}
+
+header {
+  height: 10vh;
+}
+
+footer {
+  height: 3vh;
+}
+
+main {
+  height: calc(100vh - 13vh);
 }
 
 input {
@@ -69,6 +87,10 @@ button {
   color: var(--primary-color);
   font-weight: 100;
   padding-bottom: 1rem;
+}
+
+.title-text-bordered {
+  border-bottom: var(--basic-border);
 }
 
 .align-center {

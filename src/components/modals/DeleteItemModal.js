@@ -6,41 +6,35 @@ import { useState } from "react";
 import "../../css/modals.css";
 
 // local dependencies
-import { allQueries } from "../AllQueries";
+import { allGraphQLQueries } from "../AllGraphQLQueries";
 
 export default function DeleteItemModal(props) {
-  const [itemDetails, setItemDetails] = useState({
-    bookName: "",
-    published: "",
-  });
-
   // extract necessary gql query
-  const ALL_QUERIES = allQueries();
+  const ALL_GRAPHQL_QUERIES = allGraphQLQueries();
 
   // graphql operations
-  const [addBook, { data, loading, error }] = useMutation(
-    ALL_QUERIES.ADD_BOOKS_MUTATION
+  const [deleteBook, { data, loading, error }] = useMutation(
+    ALL_GRAPHQL_QUERIES.DELETE_BOOK_MUTATION
   );
 
   console.log("data ", data, " erroor", error, " and loading ", loading);
 
   // event handlers
-
-  const onClickHandler = (e) => {
-    console.log("Item Details", itemDetails);
-    if (itemDetails.bookName) {
-      addBook({ variables: { bookName: itemDetails.bookName } });
-    }
+  const onClickHandler = () => {
+    deleteBook({ variables: { bookId: props.itemToDelete._id } });
+    props.deleteItemHandler();
   };
 
   return (
     <section className="basic-modal-container delete-modal-container padding-1rem">
-      <div className="title-text">{props.modalTitle}</div>
+      <div className="title-text title-text-bordered">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.deleteItemHandler}
       ></i>
-      <article className="basic-modal-details">Do you want to delete ?</article>
+      <article className="basic-modal-details">
+        Do you want to delete the book {props?.itemToDelete?.name}?
+      </article>
       <button onClick={onClickHandler}>{props.modalButtonText}</button>
     </section>
   );

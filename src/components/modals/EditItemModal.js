@@ -6,7 +6,7 @@ import { useState } from "react";
 import "../../css/modals.css";
 
 // local dependencies
-import { allQueries } from "../AllQueries";
+import { allGraphQLQueries } from "../AllGraphQLQueries";
 
 export default function EditItemModal(props) {
   const [itemDetails, setItemDetails] = useState({
@@ -15,11 +15,11 @@ export default function EditItemModal(props) {
   });
 
   // extract necessary gql query
-  const ALL_QUERIES = allQueries();
+  const ALL_GRAPHQL_QUERIES = allGraphQLQueries();
 
   // graphql operations
   const [addBook, { data, loading, error }] = useMutation(
-    ALL_QUERIES.ADD_BOOKS_MUTATION
+    ALL_GRAPHQL_QUERIES.ADD_BOOKS_MUTATION
   );
 
   console.log("data ", data, " erroor", error, " and loading ", loading);
@@ -39,7 +39,7 @@ export default function EditItemModal(props) {
 
   return (
     <section className="basic-modal-container edit-modal-container padding-1rem">
-      <div className="title-text">{props.modalTitle}</div>
+      <div className="title-text title-text-bordered">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.editItemHandler}

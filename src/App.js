@@ -53,6 +53,7 @@ export default function App() {
 
   return (
     <ApolloProvider client={client}>
+      <header />
       <main>
         {!tokenReceived ? (
           <Login onTokenReceipt={onTokenReceiptHandler} />
@@ -60,6 +61,7 @@ export default function App() {
           <Search />
         )}
       </main>
+      <footer />
     </ApolloProvider>
   );
 }

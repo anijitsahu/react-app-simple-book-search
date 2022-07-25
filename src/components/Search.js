@@ -3,7 +3,7 @@ import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 
 // local dependencies
-import { allQueries } from "./AllQueries";
+import { allGraphQLQueries } from "./AllGraphQLQueries";
 import ShowResults from "./ShowResults";
 import AddItemModal from "./modals/AddItemModal";
 import DeleteItemModal from "./modals/DeleteItemModal";
@@ -12,15 +12,23 @@ import EditItemModal from "./modals/EditItemModal";
 export default function Search(props) {
   const [searchText, setSearchText] = useState("");
   const [addItem, setAddItem] = useState(false);
-  const [deleteItem, setDeleteItem] = useState(false);
-  const [editItem, setEditItem] = useState(false);
+  const [deleteItem, setDeleteItem] = useState({
+    showDeleteItemModal: false,
+    itemToDelete: null,
+  });
+  const [editItem, setEditItem] = useState({
+    showEditItemModal: false,
+    itemToEdit: null,
+  });
 
   // extract necessary gql queries
-  const ALL_QUERIES = allQueries();
-  const FIND_BOOKS_QUERY = ALL_QUERIES.FIND_BOOKS_QUERY;
+  const ALL_GRAPHQL_QUERIES = allGraphQLQueries();
+  const FIND_BOOKS_QUERY = ALL_GRAPHQL_QUERIES.FIND_BOOKS_QUERY;
 
   // query graphql server
-  const [findBooks, { loading, error, data }] = useLazyQuery(FIND_BOOKS_QUERY);
+  const [findBooks, { loading, error, data }] = useLazyQuery(FIND_BOOKS_QUERY, {
+    fetchPolicy: "cache-and-network",
+  });
   console.log("loading", loading, " and error ", error, " and data ", data);
 
   const onClickHandler = () => {
@@ -44,8 +52,20 @@ export default function Search(props) {
           results={data.findBooks}
           resultTitle={"Books"}
           addItemHandler={() => setAddItem(true)}
-          deleteItemHandler={() => setDeleteItem(true)}
-          editItemHandler={() => setEditItem(true)}
+          deleteItemHandler={(ele) =>
+            setDeleteItem({
+              ...deleteItem,
+              showDeleteItemModal: true,
+              itemToDelete: ele,
+            })
+          }
+          editItemHandler={(ele) =>
+            setEditItem({
+              ...editItem,
+              showEditItemModal: true,
+              itemToEdit: ele,
+            })
+          }
         />
       )}
       {addItem && (
@@ -55,18 +75,31 @@ export default function Search(props) {
           addItemHandler={() => setAddItem(false)}
         />
       )}
-      {editItem && (
+      {editItem.showEditItemModal && (
         <EditItemModal
           modalTitle={"Edit Book"}
           modalButtonText={"Save"}
-          editItemHandler={() => setEditItem(false)}
+          editItemHandler={() =>
+            setEditItem({
+              ...editItem,
+              showEditItemModal: false,
+              itemToEdit: null,
+            })
+          }
         />
       )}
-      {deleteItem && (
+      {deleteItem.showDeleteItemModal && (
         <DeleteItemModal
           modalTitle={"Delete Book"}
           modalButtonText={"Confirm"}
-          deleteItemHandler={() => setDeleteItem(false)}
+          itemToDelete={deleteItem.itemToDelete}
+          deleteItemHandler={() =>
+            setDeleteItem({
+              ...deleteItem,
+              showDeleteItemModal: false,
+              itemToDelete: null,
+            })
+          }
         />
       )}
     </section>
