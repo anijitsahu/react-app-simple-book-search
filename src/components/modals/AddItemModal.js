@@ -34,6 +34,7 @@ export default function AddItemModal(props) {
     console.log("Item Details", itemDetails);
     if (itemDetails.bookName) {
       addBook({ variables: { bookName: itemDetails.bookName } });
+      setItemDetails({ ...itemDetails, bookName: "", published: "" });
     }
   };
 
