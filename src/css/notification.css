@@ -1,10 +1,10 @@
 .notification-container {
   border-left: solid 3px var(--success-color);
-  position: absolute;
+  position: fixed;
   z-index: 2;
   background-color: var(--success-background-color);
   left: 38vw;
-  top: 1vh;
+  top: 12vh;
   box-shadow: var(--dark-shadow);
 }
 
