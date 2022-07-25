@@ -92,3 +92,7 @@ button {
   top: 0.4rem;
   font-size: 1rem !important;
 }
+
+.delete-icon:hover {
+  color: var(--error-color);
+}

@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 // css
-import "../css/modals.css";
+import "../../css/modals.css";
 
 // local dependencies
 import { allQueries } from "../AllQueries";
@@ -38,7 +38,7 @@ export default function DeleteItemModal(props) {
       <div className="title-text">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
-        onClick={props.addItemHandler}
+        onClick={props.deleteItemHandler}
       ></i>
       <article className="basic-modal-details">Do you want to delete ?</article>
       <button onClick={onClickHandler}>{props.modalButtonText}</button>

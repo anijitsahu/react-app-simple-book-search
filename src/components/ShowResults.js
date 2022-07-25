@@ -24,7 +24,7 @@ export default function ShowResults(props) {
                 onClick={props.editItemHandler}
               ></i>
               <i
-                className="fa-solid fa-trash"
+                className="fa-solid fa-trash icon delete-icon"
                 onClick={props.deleteItemHandler}
               ></i>
             </div>

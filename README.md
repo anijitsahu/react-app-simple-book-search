@@ -1,4 +1,5 @@
 # simple-apollo-server-graphql-lambda-ui
+
 A Simple Book Search Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/).
 
 This application uses [React JS](https://reactjs.org/docs/getting-started.html) component oriented UI creation paradigm. All components are written in [JSX](https://reactjs.org/docs/jsx-in-depth.html) and ES6 style and are
@@ -6,7 +7,7 @@ combined to get a single build for production purpose using [Webpack 5](https://
 
 ES6 `module` creation along with `import /export` is used. [Babel](https://babeljs.io/docs/en/babel-preset-react) is used to _transpile_ all [JSX](https://reactjs.org/docs/jsx-in-depth.html) code to vanilla JavaScript code. To install all the dependecies `npm` is used.
 
-Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/). [Atlas](https://www.mongodb.com/cloud/atlas), the _Cloud_ version of [MongoDB](https://docs.mongodb.com/) is used. Real time communication is done using [Socket.io](https://www.npmjs.com/package/socket.io)
+Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/). [Atlas](https://www.mongodb.com/cloud/atlas), the _Cloud_ version of [MongoDB](https://docs.mongodb.com/) is used.
 
 For UI creation [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS3](https://www.w3schools.com/css/) are used. [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), the new feature of [CSS3](https://www.w3schools.com/css/) is used for layout creation purpose.
 
@@ -39,7 +40,7 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 <ul>
  <li> Real time communication is supported using <a href="https://www.npmjs.com/package/socket.io">Socket.io</a>
  <li> Rooms with users are supported </li>
- <li> Conversation of a specific rooms will be shown on clicking the corresponding room</li>  
+ <li> Conversation of a specific rooms will be shown on clicking the corresponding room</li>
 </ul>
 
 - _for mobile screen user can go to the rooms page by clicking the `<-` icon at the end of the screen_
@@ -54,46 +55,40 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 </ul>
 
 -->
+
 ## Installation
 
 Clone the repository:
 
-```
-git clone git@github.com:anijitsahu/simple-apollo-server-graphql-lambda-ui.git
+```bash
+$ git clone git@github.com:anijitsahu/simple-apollo-server-graphql-lambda-ui.git
 ```
 
 Navigate inside the directory:
 
-```
-cd simple-apollo-server-graphql-lambda-ui
-```
-
-Install all the necessary dependecies
-
-```
-npm install
+```bash
+$ cd simple-apollo-server-graphql-lambda-ui
 ```
 
-Now run the server:
+Install all the necessary dependecies and run the application
 
-```
-npm run serve
+```bash
+$ npm install
+$ npm run serve
 ```
 
 ### Login to book search
 
 ---
 
-1. Open web browser and type`http://localhost:8080` in the address bar to load the application 
+1. Open web browser and type`http://localhost:8080` in the address bar to load the application
 2. In one browser login with username `admin` and password `admin123`
-
 
 **Test users**
 
-| Username | Password  |
-| -------- | --------- |
-| admin   | admin123 |
-
+| Username | Password |
+| -------- | -------- |
+| admin    | admin123 |
 
 _tested with latest versions of <img src="screenshots/chrome.png" width="20px" title="Google Chrome">[Google Chrome](https://www.google.com/chrome/) and <img src="screenshots/firefox.png" width="25px" title="Firefox Developer edition">[Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)_
 

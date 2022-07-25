@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 // css
-import "../css/modals.css";
+import "../../css/modals.css";
 
 // local dependencies
 import { allQueries } from "../AllQueries";

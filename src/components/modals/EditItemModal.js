@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 
 // css
-import "../css/modals.css";
+import "../../css/modals.css";
 
 // local dependencies
 import { allQueries } from "../AllQueries";
@@ -42,7 +42,7 @@ export default function EditItemModal(props) {
       <div className="title-text">{props.modalTitle}</div>
       <i
         className="fa-solid fa-xmark icon close-icon"
-        onClick={props.addItemHandler}
+        onClick={props.editItemHandler}
       ></i>
       <article className="basic-modal-details">
         <label className="result-metadata result-metadata-title">
