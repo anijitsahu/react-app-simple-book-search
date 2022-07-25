@@ -16,7 +16,10 @@
 
   --primary-color: #520877;
   --error-color: #cc0000;
+  --error-background-color: #fbd6d6;
+
   --success-color: #025302;
+  --success-background-color: #5f825f;
   --badge-color: #eee;
   --fill-in-color: #eee;
   --icon-color: #ccc;
@@ -52,6 +55,7 @@ footer {
 
 main {
   height: calc(100vh - 13vh);
+  position: relative;
 }
 
 input {

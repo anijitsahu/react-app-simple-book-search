@@ -6,7 +6,7 @@ import "../css/notification.css";
 export default function Notification(props) {
   const [showNotification, setShowNotification] = useState(true);
   setTimeout(() => setShowNotification(false), 3000);
-  const containerClass = props.notificationType
+  const containerClass = props.notificationType === "error"
     ? "notification-container error-container padding-1rem notification-description"
     : "notification-container padding-1rem notification-description";
   return (

@@ -1,9 +1,16 @@
 .notification-container {
-  border-left: solid 1px var(--success-color);
+  border-left: solid 3px var(--success-color);
+  position: absolute;
+  z-index: 2;
+  background-color: var(--success-background-color);
+  left: 38vw;
+  top: 1vh;
+  box-shadow: var(--dark-shadow);
 }
 
 .error-container {
-  border-left: solid 1px var(--error-color);
+  border-left: solid 3px var(--error-color);
+  background-color: var(--error-background-color);
 }
 
 .error-description {

@@ -6,17 +6,19 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { useState } from "react";
 
 // components
 import Login from "./components/Login";
 import Search from "./components/Search";
+import Notification from "./components/Notification";
+import { NotificationContext } from "./components/AllContexts";
 
 // css
 import "./css/styles.css";
 
 // Constants
 import { Constants } from "./Constants";
-import { useState } from "react";
 
 const allConstants = Constants();
 
@@ -46,6 +48,11 @@ const client = new ApolloClient({
 
 export default function App() {
   const [tokenReceived, setTokenReceived] = useState(false);
+  const [notificationDetails, setNotificationDetails] = useState({
+    showNotification: false,
+    notificationMessage: "",
+    notificationType: "",
+  });
 
   const onTokenReceiptHandler = (received) => {
     setTokenReceived(received);
@@ -54,13 +61,21 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <header />
-      <main>
-        {!tokenReceived ? (
-          <Login onTokenReceipt={onTokenReceiptHandler} />
-        ) : (
-          <Search />
-        )}
-      </main>
+      <NotificationContext.Provider value={{ setNotificationDetails }}>
+        <main>
+          {notificationDetails.showNotification && (
+            <Notification
+              notificationType={notificationDetails.notificationType}
+              notificationMessage={notificationDetails.notificationMessage}
+            />
+          )}
+          {!tokenReceived ? (
+            <Login onTokenReceipt={onTokenReceiptHandler} />
+          ) : (
+            <Search />
+          )}
+        </main>
+      </NotificationContext.Provider>
       <footer />
     </ApolloProvider>
   );
