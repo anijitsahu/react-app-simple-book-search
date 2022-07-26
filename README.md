@@ -1,4 +1,4 @@
-# simple-apollo-server-graphql-lambda-ui
+# simple-book-search-react
 
 A Simple Book Search Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/).
 
@@ -63,13 +63,13 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 Clone the repository:
 
 ```bash
-$ git clone git@github.com:anijitsahu/simple-apollo-server-graphql-lambda-ui.git
+$ git clone git@github.com:anijitsahu/simple-book-search-react.git
 ```
 
 Navigate inside the directory:
 
 ```bash
-$ cd simple-apollo-server-graphql-lambda-ui
+$ cd simple-book-search-react
 ```
 
 Install all the necessary dependecies and run the application
