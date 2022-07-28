@@ -24,7 +24,7 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 <br/>
 
 <ol start=5>
- <li> This is Simple Book Search Application </li>
+ <li> This is Simple Book Search Application. It is a <b>CRUD</b> application. </li>
  <li> It is a Full Stack Application. This repo contains only the <i>Frontend</i> part. For the <b>Backend</b> please check the <a href="https://github.com/anijitsahu/simple-apollo-server-graphql-lambda">simple-apollo-server-graphql-lambda</a></li>
 </ol>
 
