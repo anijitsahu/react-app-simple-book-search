@@ -1,13 +1,12 @@
 # simple-book-search-react
 
-A Simple Book Search Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/).
+A Simple Book Search Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs) with [AWS Lambda](https://aws.amazon.com/lambda/) and [MongoDB](https://docs.mongodb.com/). To connect with the Backend [GraphQL](https://graphql.org/) is used with the framework [Apollo Client](https://www.apollographql.com/docs/react/) 
 
-This application uses [React JS](https://reactjs.org/docs/getting-started.html) component oriented UI creation paradigm. All components are written in [JSX](https://reactjs.org/docs/jsx-in-depth.html) and ES6 style and are
-combined to get a single build for production purpose using [Webpack 5](https://webpack.js.org/concepts/).
+This application uses [React JS](https://reactjs.org/docs/getting-started.html) component oriented UI creation paradigm. All components are written in [JSX](https://reactjs.org/docs/jsx-in-depth.html) and ES6 style and are combined to get a single build for production purpose using [Webpack 5](https://webpack.js.org/concepts/).
 
 ES6 `module` creation along with `import /export` is used. [Babel](https://babeljs.io/docs/en/babel-preset-react) is used to _transpile_ all [JSX](https://reactjs.org/docs/jsx-in-depth.html) code to vanilla JavaScript code. To install all the dependecies `npm` is used.
 
-Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/). [Atlas](https://www.mongodb.com/cloud/atlas), the _Cloud_ version of [MongoDB](https://docs.mongodb.com/) is used.
+Back end is implemented using [Node JS](https://nodejs.org/en/docs) with [AWS Lambda](https://aws.amazon.com/lambda/) and [MongoDB](https://docs.mongodb.com/). [Atlas](https://www.mongodb.com/cloud/atlas), the _Cloud_ version of [MongoDB](https://docs.mongodb.com/) is used.
 
 For UI creation [HTML5](https://www.w3schools.com/html/html5_intro.asp) and [CSS3](https://www.w3schools.com/css/) are used. [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), the new feature of [CSS3](https://www.w3schools.com/css/) is used for layout creation purpose.
 
@@ -25,38 +24,22 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 <br/>
 
 <ol start=5>
- <li> This is Simple Chat Application </li>
- <li> It is a Full Stack Application </li>
+ <li> This is Simple Book Search Application </li>
+ <li> It is a Full Stack Application. This repo contains only the <i>Frontend</i> part. For the <b>Backend</b> please check the <a href="https://github.com/anijitsahu/simple-apollo-server-graphql-lambda">simple-apollo-server-graphql-lambda</a></li>
 </ol>
 
 7. All the book details, authors and publication detils are stored in the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). This is a _free/ shared_ account on [Atlas](https://www.mongodb.com/cloud/atlas). **So Please use it wisely**
 
 <ol start=8>
- <li>Login as well as Logout feature is added </li>
- <li>Error will be shown if the credentials are not correct</li>
+ <li>Login feature is added </li>
+ <li>Error will be shown if the credentials are not correct or Network is <i>not</i> present</li>
+ <li> <b>Session tracking</b> is supported using <a href="https://https://jwt.io/">JSON Web Tokens (JWT)</a>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a> is used to save the <a href="https://https://jwt.io/">JSON Web Tokens (JWT)</a></li>
+ <li> To implement the features of <a href="https://graphql.org/">GraphQL</a> like <b>Queries, Mutations</b> the framework <a href="https://www.apollographql.com/docs/react/">Apollo Client</a> is used</li>
 </ol>
 
-10. _for simplicity passwords are not encrypted_
+13. _for simplicity passwords are not encrypted_
 
-<!---
-<ul>
- <li> Real time communication is supported using <a href="https://www.npmjs.com/package/socket.io">Socket.io</a>
- <li> Rooms with users are supported </li>
- <li> Conversation of a specific rooms will be shown on clicking the corresponding room</li>
-</ul>
-
-- _for mobile screen user can go to the rooms page by clicking the `<-` icon at the end of the screen_
-- Multiline message can be send by hitting `Ctrl + ENTER`
-- To send a message hit `ENTER` key
-
-<ul>
- <li> Online / Offline status are shown by the <i>violet dot</i> </li>
- <li> Read / Unread status of conversation is supported
- <li> All the conversation are stored in the database i.e. <i>persistant</i>
- <li> All the timestamps are shown in <i>UTC</i> format to taken into cross browser differences
-</ul>
-
--->
 
 ## Installation
 
@@ -76,6 +59,8 @@ Install all the necessary dependecies and run the application
 
 ```bash
 $ npm install
+
+# To serve the application we use a npm module named http-server  
 $ npm run serve
 ```
 
@@ -84,7 +69,7 @@ $ npm run serve
 ---
 
 1. Open web browser and type`http://localhost:8080` in the address bar to load the application
-2. In one browser login with username `admin` and password `admin123`
+2. Now login with username `admin` and password `admin123`
 
 **Test users**
 
