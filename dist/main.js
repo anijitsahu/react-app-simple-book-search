@@ -959,6 +959,7 @@ function ShowResults(props) {
         children: props.results.length
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
         className: "fa-solid fa-plus icon",
+        title: "Add",
         onClick: props.addItemHandler
       })]
     }), props.results.map(ele => {
@@ -1068,7 +1069,8 @@ function AddItemModal(props) {
       children: props.modalTitle
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
       className: "fa-solid fa-xmark icon close-icon",
-      onClick: props.addItemHandler
+      onClick: props.addItemHandler,
+      title: "Close"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("article", {
       className: "basic-modal-details",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {

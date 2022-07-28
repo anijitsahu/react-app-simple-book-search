@@ -52,6 +52,7 @@ export default function AddItemModal(props) {
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.addItemHandler}
+        title="Close"
       ></i>
       <article className="basic-modal-details">
         <label className="result-metadata result-metadata-title">

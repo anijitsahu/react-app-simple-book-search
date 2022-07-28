@@ -60,6 +60,7 @@ export default function EditItemModal(props) {
       <i
         className="fa-solid fa-xmark icon close-icon"
         onClick={props.editItemHandler}
+        title="Close"
       ></i>
       <article className="basic-modal-details">
         <label className="result-metadata result-metadata-title">

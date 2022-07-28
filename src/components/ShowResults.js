@@ -8,7 +8,11 @@ export default function ShowResults(props) {
         <span className="result-metadata result-metadata-badge">
           {props.results.length}
         </span>
-        <i className="fa-solid fa-plus icon" onClick={props.addItemHandler}></i>
+        <i
+          className="fa-solid fa-plus icon"
+          title="Add"
+          onClick={props.addItemHandler}
+        ></i>
       </div>
       {props.results.map((ele) => {
         return (
@@ -21,10 +25,12 @@ export default function ShowResults(props) {
             <div>
               <i
                 className="fa-solid fa-pencil icon"
+                title="Edit"
                 onClick={() => props.editItemHandler(ele)}
               ></i>
               <i
                 className="fa-solid fa-trash icon delete-icon"
+                title="Delete"
                 onClick={() => props.deleteItemHandler(ele)}
               ></i>
             </div>
