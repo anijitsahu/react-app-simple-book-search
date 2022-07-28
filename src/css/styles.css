@@ -48,9 +48,10 @@ footer {
 header {
   height: 10vh;
   height: 10vh;
-  padding: 1rem 1rem 1rem 2rem;
   color: #fff;
   font-size: 1.3rem;
+  display: grid;
+  align-items: center;
 }
 
 footer {

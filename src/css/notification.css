@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 2;
   background-color: var(--success-background-color);
-  left: 38vw;
+  left: 12vw;
   top: 12vh;
   box-shadow: var(--dark-shadow);
 }
@@ -19,4 +19,10 @@
 
 .error-title {
   color: var(--error-color);
+}
+
+@media screen and (min-width: 768px) {
+  .notification-container {
+    left: 38vw;
+  }
 }

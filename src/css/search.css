@@ -1,7 +1,7 @@
 .search-container {
   border-inline: var(--basic-border);
   box-shadow: var(--basic-shadow);
-  width: 80vw;
+  width: 98vw;
   margin: 0 auto;
   position: relative;
 }
@@ -40,4 +40,10 @@
   padding: 0.9rem 0.9rem 0.9rem 1rem;
   font-weight: 700;
   border-bottom: var(--thick-border);
+}
+
+@media screen and (min-width: 768px) {
+  .search-container {
+    width: 80vw;
+  }
 }
