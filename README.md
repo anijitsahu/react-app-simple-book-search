@@ -1,4 +1,4 @@
-# simple-book-search-react
+# react-app-simple-book-search
 
 A Simple Book Search Application using [React JS](https://reactjs.org/docs/getting-started.html), a JavaScript library to make awesome UI by Facebook, [Node JS](https://nodejs.org/en/docs) with [AWS Lambda](https://aws.amazon.com/lambda/) and [MongoDB](https://docs.mongodb.com/). To connect with the Backend [GraphQL](https://graphql.org/) is used with the framework [Apollo Client](https://www.apollographql.com/docs/react/) 
 
@@ -46,13 +46,13 @@ This is a _responsive web application_ for viewing in both Mobile and Desktop.
 Clone the repository:
 
 ```bash
-$ git clone git@github.com:anijitsahu/simple-book-search-react.git
+$ git clone git@github.com:anijitsahu/react-app-simple-book-search.git
 ```
 
 Navigate inside the directory:
 
 ```bash
-$ cd simple-book-search-react
+$ cd react-app-simple-book-search
 ```
 
 Install all the necessary dependecies and run the application
